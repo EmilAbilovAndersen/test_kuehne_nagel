@@ -1,0 +1,22 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+
+    <changeSet  author="e.abilov"  id="002-Fill cities table with data from .csv">
+        <loadUpdateData  file="cities/data/cities.csv"
+                         primaryKey="id"
+                         quotchar="'"
+                         relativeToChangelogFile="true"
+                         schemaName="public"
+                         tableName="cities">
+            <column  header="name"
+                     name="name"
+                     type="STRING"/>
+            <column  header="photo"
+                     name="photo_url"
+                     type="STRING"/>
+        </loadUpdateData>
+    </changeSet>
+
+</databaseChangeLog>
